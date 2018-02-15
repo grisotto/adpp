@@ -1,7 +1,7 @@
 """Instance generator for Ads Rich Placement Problem
 Usage:
-  instance_arpp.py (DIST) (H) (T) (NADS) 
-  instance_arpp.py --version
+  instance_adpp.py (DIST) (H) (T) (NADS) 
+  instance_adpp.py --version
 
 Examples:
 	instance_arpp.py zipf 5 5 100
@@ -55,7 +55,7 @@ T = arguments['T'] #banner/knapsack exposition time
 NADS = arguments['NADS']
 random.seed(datetime.now())
 
-file = open('{}_{}_{}_{}.arpp'.format(DIST, H, T, NADS),"w")
+file = open('{}_{}_{}_{}.adpp'.format(DIST, H, T, NADS),"w")
 file.write('{}\t{}'.format(H,T))
 file.write('\n{}\n'.format(NADS))
 ads = []
