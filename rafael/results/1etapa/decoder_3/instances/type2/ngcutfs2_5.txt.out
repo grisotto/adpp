@@ -1,0 +1,48 @@
+Welcome to the 2dKBRKGA
+W H
+100 100
+Running for 10000 generations...
+Gen: 0 Improved solution: -29263 Time: 0.24548
+Gen: 1 Improved solution: -29326 Time: 0.409065
+Gen: 2 Improved solution: -29444 Time: 0.579874
+Gen: 5 Improved solution: -29711 Time: 1.07616
+Gen: 6 Improved solution: -29807 Time: 1.22605
+Gen: 38 Improved solution: -29858 Time: 5.24504
+Gen: 39 Improved solution: -29873 Time: 5.36966
+Gen: 60 Improved solution: -29973 Time: 7.95292
+Fitness of the top 10 individuals of each population:
+Population #0:
+	0) -29973
+	1) -29973
+	2) -29973
+	3) -29973
+	4) -29973
+	5) -29973
+	6) -29973
+	7) -29973
+	8) -29973
+	9) -29973
+Population #1:
+	0) -29973
+	1) -29973
+	2) -29973
+	3) -29973
+	4) -29973
+	5) -29973
+	6) -29973
+	7) -29973
+	8) -29973
+	9) -29973
+Population #2:
+	0) -29973
+	1) -29973
+	2) -29973
+	3) -29973
+	4) -29973
+	5) -29973
+	6) -29973
+	7) -29973
+	8) -29973
+	9) -29973
+Time: 1224.61
+Best solution found has objective value = -29973

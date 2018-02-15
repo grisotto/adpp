@@ -1,0 +1,62 @@
+Welcome to the 2dKBRKGA
+W H
+100 100
+Running for 10000 generations...
+Gen: 0 Improved solution: -23262 Time: 0.027159
+Gen: 1 Improved solution: -23328 Time: 0.046037
+Gen: 2 Improved solution: -23724 Time: 0.066341
+Gen: 3 Improved solution: -23798 Time: 0.08989
+Gen: 4 Improved solution: -24540 Time: 0.109199
+Gen: 5 Improved solution: -24596 Time: 0.128831
+Gen: 6 Improved solution: -24630 Time: 0.148213
+Gen: 8 Improved solution: -24736 Time: 0.202335
+Gen: 10 Improved solution: -25056 Time: 0.26014
+Gen: 11 Improved solution: -25092 Time: 0.279263
+Gen: 98 Improved solution: -25182 Time: 1.71748
+Gen: 115 Improved solution: -25195 Time: 2.0349
+Gen: 116 Improved solution: -25231 Time: 2.05186
+Gen: 117 Improved solution: -25348 Time: 2.06773
+Gen: 123 Improved solution: -25474 Time: 2.16732
+Gen: 126 Improved solution: -25500 Time: 2.21447
+Gen: 132 Improved solution: -25917 Time: 2.30632
+Gen: 268 Improved solution: -26061 Time: 4.50916
+Gen: 387 Improved solution: -26088 Time: 6.43892
+Gen: 394 Improved solution: -26178 Time: 6.55379
+Gen: 6174 Improved solution: -26286 Time: 99.95
+Gen: 6299 Improved solution: -26430 Time: 101.942
+Fitness of the top 10 individuals of each population:
+Population #0:
+	0) -26430
+	1) -26430
+	2) -26430
+	3) -26430
+	4) -26430
+	5) -26430
+	6) -26430
+	7) -26430
+	8) -26430
+	9) -26430
+Population #1:
+	0) -26430
+	1) -26430
+	2) -26430
+	3) -26430
+	4) -26430
+	5) -26430
+	6) -26430
+	7) -26430
+	8) -26430
+	9) -26430
+Population #2:
+	0) -26430
+	1) -26430
+	2) -26430
+	3) -26430
+	4) -26430
+	5) -26430
+	6) -26430
+	7) -26430
+	8) -26430
+	9) -26430
+Time: 161.902
+Best solution found has objective value = -26430

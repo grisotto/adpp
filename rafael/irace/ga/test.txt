@@ -1,0 +1,13 @@
+gcut2.txt
+gcut4.txt
+gcut5.txt
+gcut6.txt
+type1/ngcutfs1_1.txt
+type1/ngcutfs1_3.txt
+type1/ngcutfs1_8.txt
+type2/ngcutfs2_1.txt
+type2/ngcutfs2_4.txt
+type3/ngcutfs3_1.txt
+type3/ngcutfs3_4.txt
+type3/ngcutfs3_5.txt
+

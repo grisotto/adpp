@@ -1,0 +1,6 @@
+#ifndef MAXITEMSDEFINE
+#define MAXITEMSDEFINE
+
+#define MAXITEMS 2000
+
+#endif

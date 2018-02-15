@@ -1,0 +1,77 @@
+87
+103
+Academic license - for non-commercial use only
+Optimize a model with 8981 rows, 6443 columns and 14730274 nonzeros
+Variable types: 0 continuous, 6443 integer (6443 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [6e+03, 3e+04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 48634
+Presolve removed 294 rows and 114 columns (presolve time = 5s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 10s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 15s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 20s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 25s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 30s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 35s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 40s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 45s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 50s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 55s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 60s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 65s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 70s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 75s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 80s) ...
+Presolve removed 294 rows and 129 columns (presolve time = 85s) ...
+Presolve removed 294 rows and 129 columns
+Presolve time: 85.19s
+Presolved: 8687 rows, 6314 columns, 14496428 nonzeros
+Variable types: 0 continuous, 6314 integer (6314 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.4280080e+06   4.960050e+05   0.000000e+00     86s
+    2219    6.1240391e+04   0.000000e+00   0.000000e+00     89s
+
+Root relaxation: objective 6.124039e+04, 2219 iterations, 2.53 seconds
+Total elapsed time = 93.26s
+Total elapsed time = 97.88s
+Total elapsed time = 100.87s
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 61240.3908    0   40 48634.0000 61240.3908  25.9%     -  101s
+H    0     0                    59307.000000 61240.3908  3.26%     -  105s
+H    0     0                    59563.000000 61240.3908  2.82%     -  135s
+     0     0 61078.4716    0   64 59563.0000 61078.4716  2.54%     -  191s
+     0     0 61078.4716    0  170 59563.0000 61078.4716  2.54%     -  408s
+     0     0 61022.2856    0  311 59563.0000 61022.2856  2.45%     -  410s
+     0     0 61007.4016    0  356 59563.0000 61007.4016  2.42%     -  411s
+     0     0 61005.7670    0  350 59563.0000 61005.7670  2.42%     -  411s
+     0     0 61005.1894    0  353 59563.0000 61005.1894  2.42%     -  411s
+     0     0 60988.0414    0  366 59563.0000 60988.0414  2.39%     -  412s
+     0     0 60988.0414    0  325 59563.0000 60988.0414  2.39%     -  422s
+     0     2 60988.0414    0  323 59563.0000 60988.0414  2.39%     -  425s
+    23    11 59874.5000    6   99 59563.0000 60878.9665  2.21%   276  430s
+    62    22 59965.8000   11  225 59563.0000 60754.1618  2.00%   285  435s
+*   88    33              25    59798.000000 60754.1618  1.60%   234  437s
+   168    33 60447.7923   24  282 59798.0000 60478.4167  1.14%   174  440s
+
+Cutting planes:
+  Implied bound: 2
+  Clique: 6
+  MIR: 3
+
+Explored 440 nodes (61818 simplex iterations) in 443.85 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 59798 59563 59307 48634 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.979800000000e+04, best bound 5.979800000000e+04, gap 0.0000%
+Obj: 59798

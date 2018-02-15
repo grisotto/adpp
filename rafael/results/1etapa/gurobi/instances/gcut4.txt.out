@@ -1,0 +1,32 @@
+146
+143
+Academic license - for non-commercial use only
+Optimize a model with 20928 rows, 71393 columns and 425712443 nonzeros
+Variable types: 0 continuous, 71393 integer (71393 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e+03, 3e+04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 48479
+Presolve removed 288 rows and 0 columns (presolve time = 409s) ...
+Presolve removed 288 rows and 0 columns (presolve time = 426s) ...
+Presolve removed 288 rows and 0 columns (presolve time = 893s) ...
+Presolve removed 288 rows and 0 columns (presolve time = 895s) ...
+Presolve removed 288 rows and 0 columns (presolve time = 900s) ...
+Presolve removed 288 rows and 0 columns (presolve time = 905s) ...
+Presolve removed 288 rows and 0 columns (presolve time = 1453s) ...
+Presolve removed 288 rows and 0 columns (presolve time = 1455s) ...
+Presolve removed 288 rows and 0 columns (presolve time = 2121s) ...
+Presolve removed 288 rows and 0 columns
+Presolve time: 2121.48s
+
+Explored 0 nodes (0 simplex iterations) in 2635.96 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: 48479 
+No other solutions better than 0
+
+Time limit reached
+Best objective 4.847900000000e+04, best bound -, gap -
+Obj: 48479

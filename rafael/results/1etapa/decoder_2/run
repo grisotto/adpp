@@ -1,0 +1,27 @@
+#!/bin/bash
+make
+	for f in instances/*.txt;
+do
+echo "Instancia $f starting"
+./brkga2dk $f | tee $f.out
+
+done
+
+for f in instances/type1/*.txt;
+do
+echo "Instancia $f starting"
+./brkga2dk $f | tee $f.out
+done
+
+for f in instances/type2/*.txt;
+do
+echo "Instancia $f starting"
+./brkga2dk $f | tee $f.out
+done
+
+for f in instances/type3/*.txt;
+do
+echo "Instancia $f starting"
+./brkga2dk $f | tee $f.out
+done
+
