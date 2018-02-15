@@ -1,1 +1,0 @@
-gcc -g -Wall figura.c 2dbinpack.c 2dbinpack_ex2.c -o m -lm
