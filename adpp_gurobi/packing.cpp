@@ -114,8 +114,8 @@ bool knapsack2d(int W, int H, vector<int> w, vector<int> h,  vector<int> d, vect
 }
 
 
-int main (){
-
+int main (int argc, char* argv[]){
+  if( argc > 0){
     int N;
     int W;
     int H;
@@ -124,9 +124,8 @@ int main (){
     vector<int> d; // minimum number of pieces of that type 
     vector<int> b; // maximum number of pieces of that type 
     vector<int> value;
-    string filename = "../rafael/instances/gcut1.txt";
     int temp;
-    ifstream in(filename);
+    ifstream in(argv[1]);
     //read a instance
         //--format
         //N
@@ -151,9 +150,14 @@ int main (){
         }
 
     }else{
-        cerr << "NO such file:" << filename << endl; 
+        cerr << "No such file:" << endl; 
         throw(1);
     }
+    //read two functions
+    //first: function for lines (y)
+    //second: function for exposition time (x)
+    
+    
     //cout << "W H" << endl;
     //cout << W << " " << H << endl;
         //cout << "w h d b value" << endl; 
@@ -162,5 +166,10 @@ int main (){
     //}
 
     knapsack2d(W,H,w,h,d,b,value);
+  }else{
+    cout << "Usage: <instance_file> <lines_function> <time_function>" << endl;
+  
+  
+  }
 }
 
