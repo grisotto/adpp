@@ -27,10 +27,11 @@ class knapsack2d{
 
         knapsack2d(const char* filename, const char* flines, const char* ftimes);
         knapsack2d();
+        template <typename T>
+        vector<double> evaluate_function(const string function,const int b);
 
 	private:
         void readInstance(const char* filename, const char* flines, const char* ftimes);
-        vector<double> evaluate_function(string function, int b);
 
 };
 #endif

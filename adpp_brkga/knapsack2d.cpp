@@ -1,8 +1,7 @@
 #include "knapsack2d.h"
 
-
 template <typename T>
-vector<double> evaluate_function(string function, int points)
+vector<double> knapsack2d::evaluate_function(const string function, const int points)
 {
   typedef exprtk::symbol_table<T> symbol_table_t;
   typedef exprtk::expression<T>     expression_t;
@@ -82,8 +81,8 @@ void knapsack2d::readInstance(const char* filename, const char* flines, const ch
     if(filelines && filetimes){
       getline(filelines, this->flines);
       getline(filetimes, this->ftimes);
-      this->function_lines = evaluate_function(flines, H);
-      this->function_times = evaluate_function(ftimes, W);
+      this->function_lines = knapsack2d::evaluate_function<double>(flines, H);
+      this->function_times = knapsack2d::evaluate_function<double>(ftimes, W);
 
     }else{
         cerr << "No functions files:" << endl; 

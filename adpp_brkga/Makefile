@@ -28,7 +28,7 @@ endif
 #CFLAGS= -DRANGECHECK -Wextra -Wall -Weffc++ -ansi -pedantic -Woverloaded-virtual -Wcast-align -Wpointer-arith
 
 # Objects:
-	OBJECTS=Population.o brkga2dkDecoder.o brkga2dkDecoder_2.o brkga2dkDecoder_3.o brkga2dkDecoder_4.o brkga2dk.o knapsack2d.o figura.o 2dbinpack.o 
+	OBJECTS=Population.o brkga2dkDecoder.o brkga2dkDecoder_4.o brkga2dk.o knapsack2d.o figura.o 2dbinpack.o 
 
 # Targets:
 all: brkga2dk 
