@@ -1,0 +1,29 @@
+Academic license - for non-commercial use only
+Optimize a model with 76 rows, 342 columns and 1672 nonzeros
+Variable types: 0 continuous, 342 integer (342 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e-10, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 502.3142561
+Presolve removed 31 rows and 0 columns
+Presolve time: 0.01s
+Presolved: 45 rows, 342 columns, 1360 nonzeros
+Variable types: 0 continuous, 342 integer (342 binary)
+
+Root relaxation: objective 8.132558e+02, 80 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0     813.2558215  813.25582  0.00%     -    0s
+
+Explored 0 nodes (80 simplex iterations) in 0.01 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 813.256 502.314 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.132558215093e+02, best bound 8.132558215093e+02, gap 0.0000%
+Obj: 813.256
