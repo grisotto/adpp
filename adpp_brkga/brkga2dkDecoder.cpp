@@ -20,7 +20,7 @@ int brkga2dkDecoder::getChromosomeSize(){
     return 2 * m_instance.N;
 }
 
-void print_seq(vector<pair<int,int>> & seq) {
+void print_seq(vector<pair<int,int> > & seq) {
     for(auto &p : seq) {
         cout << "(" << p.first << "," << p.second << ") ";
     }

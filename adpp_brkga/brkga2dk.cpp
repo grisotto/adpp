@@ -31,8 +31,6 @@
 #include "brkgaAPI/MTRand.h"
 #include "2dbinpack/2dbinpack.h"
 #include "brkga2dkDecoder.h"
-#include "brkga2dkDecoder_2.h"
-#include "brkga2dkDecoder_3.h"
 #include "brkga2dkDecoder_4.h"
 #include "knapsack2d.h"
 #include <ctime>
@@ -67,18 +65,18 @@ int main(int argc, char* argv[]) {
 
         const unsigned X_INTVL = 444;	// exchange best individuals at every 100 generations
         const unsigned X_NUMBER = 4;	// exchange top 2 best
-        const unsigned MAX_GENS = 10000;	// run for 
+        const unsigned MAX_GENS = 2;	// run for 
         const double fitRate = 0.99;
         const double sizeRate = 0.05;
-        const bool DiversifyPopulation = true;
-        const bool RestartStrategy = true;
+        const bool DiversifyPopulation = false;
+        const bool RestartStrategy = false;
         const unsigned reset = 1206;
         double bestFitness = std::numeric_limits<double>::max();
         double TIMELIMIT = 1800.0;
         double elapsed_secs; 
         unsigned relevantGeneration = 1;
 
-        knapsack2d instance(argv[1]);
+        knapsack2d instance(argv[1], argv[2], argv[3]);
         brkga2dkDecoder decoder(instance);				// initialize the decoder
         //brkga2dkDecoder_2 decoder_2(instance);
         //brkga2dkDecoder_3 decoder_3(instance);
