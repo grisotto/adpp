@@ -17,13 +17,13 @@ vector<double> evaluate_function(string function, vector<int> points)
   vector<double> function_evaluate; 
 
   string expression_string = function;
-  cout << "function: "<< function<<"\n"<< endl;
+  //cout << "function: "<< function<<"\n"<< endl;
 
-  std::cout << "Points: "<< '\n';
-  for (vector<int>::iterator it = points.begin() ; it != points.end(); ++it){
-    cout << " " << *it ; 
-  }
-  std::cout << '\n';
+  //cout << "Points: "<< '\n';
+  //for (vector<int>::iterator it = points.begin() ; it != points.end(); ++it){
+    //cout << " " << *it ; 
+  //}
+  //cout << '\n';
   T x;
   symbol_table_t symbol_table;
   symbol_table.add_variable("x",x);
@@ -34,7 +34,7 @@ vector<double> evaluate_function(string function, vector<int> points)
 
   parser_t parser;
   parser.compile(expression_string,expression);
-  std::cout << "expression.value: "<< '\n';
+  //cout << "expression.value: "<< '\n';
   function_evaluate.push_back(1.0);
   for (vector<int>::iterator it = points.begin()+1; it != points.end(); ++it){
     x = *it;
@@ -42,11 +42,11 @@ vector<double> evaluate_function(string function, vector<int> points)
     double result = expression.value();
     function_evaluate.push_back(result);
   }
-  std::cout << '\n';
+  //cout << '\n';
   for (vector<double>::iterator it = function_evaluate.begin(); it != function_evaluate.end(); ++it){
-    cout << ' ' << *it;
+    //cout << ' ' << *it;
   }
-  std::cout << '\n';
+  //cout << '\n';
 
   if(validate)
     for (x = T(1); x <= T(+1); x += T(0.1))
@@ -91,8 +91,8 @@ bool knapsack2d(int W, int H, vector<int> w, vector<int> h,  vector<int> d, vect
     //for (int i=0; i<H; i++) hSet.push_back(i);
     vector<double> function_lines = evaluate_function<double>(flines, hSet);
     vector<double> function_times = evaluate_function<double>(ftimes, wSet);
-    cout << wSet.size() << endl;
-    cout << hSet.size() << endl;
+    //cout << wSet.size() << endl;
+    //cout << hSet.size() << endl;
 	//+ Setting Gurobi Model/Environment
 	GRBEnv env = GRBEnv();
 	GRBModel model = GRBModel(env);
@@ -112,9 +112,9 @@ bool knapsack2d(int W, int H, vector<int> w, vector<int> h,  vector<int> d, vect
             x[i].push_back(vector<GRBVar>());
             for (auto q : wSet){
               if(w[i]+q<=W){
-                cout << "value: " << value[i] << " lines: "<< function_lines[p] << " p: " << p << " times: " << function_times[q]<< " q: "<< q << endl;
+                //cout << "value: " << value[i] << " lines: "<< function_lines[p] << " p: " << p << " times: " << function_times[q]<< " q: "<< q << endl;
                 value[i] = value[i] * (function_lines[p] * function_times[q]);
-                cout << "new value: " << value[i] << endl;
+                //cout << "new value: " << value[i] << endl;
                 x[i].back().push_back(model.addVar(0.0, 1.0, value[i], GRB_BINARY));
               }
             }
