@@ -1,10 +1,62 @@
 #include <vector>
 #include <iostream>
-#include <vector>
 #include <sstream>
+#include <cmath>
 #include "gurobi_c++.h"
+#include "exprtk.hpp"
 
 using namespace std;
+
+template <typename T>
+vector<double> evaluate_function(string function, vector<int> points)
+{
+  typedef exprtk::symbol_table<T> symbol_table_t;
+  typedef exprtk::expression<T>     expression_t;
+  typedef exprtk::parser<T>             parser_t;
+  bool validate = false;
+  vector<double> function_evaluate; 
+
+  string expression_string = function;
+  cout << "function: "<< function<<"\n"<< endl;
+
+  std::cout << "Points: "<< '\n';
+  for (vector<int>::iterator it = points.begin() ; it != points.end(); ++it){
+    cout << " " << *it ; 
+  }
+  std::cout << '\n';
+  T x;
+  symbol_table_t symbol_table;
+  symbol_table.add_variable("x",x);
+  symbol_table.add_constants();
+
+  expression_t expression;
+  expression.register_symbol_table(symbol_table);
+
+  parser_t parser;
+  parser.compile(expression_string,expression);
+  std::cout << "expression.value: "<< '\n';
+  function_evaluate.push_back(1.0);
+  for (vector<int>::iterator it = points.begin()+1; it != points.end(); ++it){
+    x = *it;
+    //cout << " " << expression.value(); 
+    double result = expression.value();
+    function_evaluate.push_back(result);
+  }
+  std::cout << '\n';
+  for (vector<double>::iterator it = function_evaluate.begin(); it != function_evaluate.end(); ++it){
+    cout << ' ' << *it;
+  }
+  std::cout << '\n';
+
+  if(validate)
+    for (x = T(1); x <= T(+1); x += T(0.1))
+    {
+      T y = expression.value();
+      printf("%19.15f\t%19.15f\n",x,y);
+    }
+  return function_evaluate;
+}
+
 vector<int> computeNP(int W, vector<int> w, vector<int> b){
 
 	vector<int> normalPatterns; // Return vector
@@ -19,8 +71,8 @@ vector<int> computeNP(int W, vector<int> w, vector<int> b){
 
     //+ Generating points
     for (int i=0; i<m; i++) if (W-w[i]>=0) for (int _=0;_<b[i];_++) for (int j=min(W-w[i],last); j>=0; j--) if (x[j]==1){
-		x[j+w[i]] = 1;
-		if (j==last) last = j+w[i];
+      x[j+w[i]] = 1;
+      if (j==last) last = j+w[i];
     }
 
 	//+ Saving points
@@ -28,7 +80,7 @@ vector<int> computeNP(int W, vector<int> w, vector<int> b){
     return normalPatterns;
 }
 
-bool knapsack2d(int W, int H, vector<int> w, vector<int> h,  vector<int> d, vector<int> b,vector<int> value){
+bool knapsack2d(int W, int H, vector<int> w, vector<int> h,  vector<int> d, vector<int> b,vector<double> value, string flines, string ftimes){
 
 
     int m = w.size();
@@ -37,9 +89,10 @@ bool knapsack2d(int W, int H, vector<int> w, vector<int> h,  vector<int> d, vect
     vector<int> hSet = computeNP(H, h, b);
     //for (int i=0; i<W; i++) wSet.push_back(i);
     //for (int i=0; i<H; i++) hSet.push_back(i);
-
-        cout << wSet.size() << endl;
-        cout << hSet.size() << endl;
+    vector<double> function_lines = evaluate_function<double>(flines, hSet);
+    vector<double> function_times = evaluate_function<double>(ftimes, wSet);
+    cout << wSet.size() << endl;
+    cout << hSet.size() << endl;
 	//+ Setting Gurobi Model/Environment
 	GRBEnv env = GRBEnv();
 	GRBModel model = GRBModel(env);
@@ -48,22 +101,26 @@ bool knapsack2d(int W, int H, vector<int> w, vector<int> h,  vector<int> d, vect
     try{
 
 
-	//+ Setting Model Variables
-	vector<vector<vector<GRBVar>>> x(m);
-	for (int i = 0; i < m; i++) {
+      //+ Setting Model Variables
+      vector<vector<vector<GRBVar>>> x(m);
+      for (int i = 0; i < m; i++) {
 
-		x[i] = vector<vector<GRBVar>>();
-		for (auto p: hSet)
-            if (h[i]+p<=H){
+        x[i] = vector<vector<GRBVar>>();
+        for (auto p: hSet){
+          if (h[i]+p<=H){
 
-			x[i].push_back(vector<GRBVar>());
-			for (auto q : wSet)
-                if(w[i]+q<=W)
-                    x[i].back().push_back(model.addVar(0.0, 1.0, value[i], GRB_BINARY));
-
-
-		}
-	}
+            x[i].push_back(vector<GRBVar>());
+            for (auto q : wSet){
+              if(w[i]+q<=W){
+                cout << "value: " << value[i] << " lines: "<< function_lines[p] << " p: " << p << " times: " << function_times[q]<< " q: "<< q << endl;
+                value[i] = value[i] * (function_lines[p] * function_times[q]);
+                cout << "new value: " << value[i] << endl;
+                x[i].back().push_back(model.addVar(0.0, 1.0, value[i], GRB_BINARY));
+              }
+            }
+          }
+        }
+      }
 
 	model.update();
     model.set(GRB_IntAttr_ModelSense, -1);
@@ -123,9 +180,14 @@ int main (int argc, char* argv[]){
     vector<int> h ;
     vector<int> d; // minimum number of pieces of that type 
     vector<int> b; // maximum number of pieces of that type 
-    vector<int> value;
+    vector<double> value;
+    string flines, ftimes;
     int temp;
+    //Var to read files
     ifstream in(argv[1]);
+    ifstream filelines(argv[2]);
+    ifstream filetimes(argv[3]);
+    
     //read a instance
         //--format
         //N
@@ -150,12 +212,19 @@ int main (int argc, char* argv[]){
         }
 
     }else{
-        cerr << "No such file:" << endl; 
+        cerr << "No instance file" << endl; 
         throw(1);
     }
     //read two functions
     //first: function for lines (y)
     //second: function for exposition time (x)
+    if(filelines && filetimes){
+      getline(filelines, flines);
+      getline(filetimes, ftimes);
+    }else{
+      cerr << "No functions files" << endl; 
+      throw(1);
+    }
     
     
     //cout << "W H" << endl;
@@ -165,7 +234,7 @@ int main (int argc, char* argv[]){
         //cout << w[i] << " " << h[i] << " " << d[i] << " " << b[i] << " " << value[i] << " " << endl;
     //}
 
-    knapsack2d(W,H,w,h,d,b,value);
+    knapsack2d(W,H,w,h,d,b,value, flines, ftimes);
   }else{
     cout << "Usage: <instance_file> <lines_function> <time_function>" << endl;
   
