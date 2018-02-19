@@ -1,0 +1,21 @@
+Academic license - for non-commercial use only
+Optimize a model with 1009 rows, 1980 columns and 5960 nonzeros
+Variable types: 0 continuous, 1980 integer (1980 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e-01, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+00]
+Found heuristic solution: objective 74.0542000
+Presolve removed 1009 rows and 1980 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 1800.86 74.0542 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.800863500000e+03, best bound 1.800863500000e+03, gap 0.0000%
+Obj: 1800.86
