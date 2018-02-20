@@ -3,10 +3,10 @@ Optimize a model with 1009 rows, 1986 columns and 5972 nonzeros
 Variable types: 0 continuous, 1986 integer (1986 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+00]
-  Objective range  [7e-01, 6e+02]
+  Objective range  [8e-01, 6e+02]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 4e+00]
-Found heuristic solution: objective 53.8576000
+Found heuristic solution: objective 57.7600000
 Presolve removed 1009 rows and 1986 columns
 Presolve time: 0.00s
 Presolve: All rows and columns removed
@@ -14,8 +14,8 @@ Presolve: All rows and columns removed
 Explored 0 nodes (0 simplex iterations) in 0.00 seconds
 Thread count was 1 (of 8 available processors)
 
-Solution count 2: 1898.48 53.8576 
+Solution count 2: 2036.04 57.76 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 1.898480400000e+03, best bound 1.898480400000e+03, gap 0.0000%
-Obj: 1898.48
+Best objective 2.036040000000e+03, best bound 2.036040000000e+03, gap 0.0000%
+Obj: 2036.04

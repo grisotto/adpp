@@ -3,28 +3,35 @@ Optimize a model with 140 rows, 602 columns and 10469 nonzeros
 Variable types: 0 continuous, 602 integer (602 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+00]
-  Objective range  [5e-70, 2e+03]
+  Objective range  [2e+00, 2e+03]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 1e+00]
-Found heuristic solution: objective 1909.0108501
-Presolve removed 70 rows and 322 columns
-Presolve time: 0.05s
-Presolved: 70 rows, 280 columns, 4650 nonzeros
-Variable types: 0 continuous, 280 integer (280 binary)
+Found heuristic solution: objective 2591.9233735
+Presolve removed 57 rows and 18 columns
+Presolve time: 0.03s
+Presolved: 83 rows, 584 columns, 8750 nonzeros
+Variable types: 0 continuous, 584 integer (584 binary)
 
-Root relaxation: objective 1.909016e+03, 29 iterations, 0.00 seconds
+Root relaxation: objective 2.996530e+03, 129 iterations, 0.00 seconds
 
     Nodes    |    Current Node    |     Objective Bounds      |     Work
  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-H    0     0                    1909.0155201 29714.8319  1457%     -    0s
-     0     0          -    0      1909.01552 1909.01552  0.00%     -    0s
+     0     0 2996.53025    0    9 2591.92337 2996.53025  15.6%     -    0s
+H    0     0                    2903.3398298 2996.53025  3.21%     -    0s
+H    0     0                    2991.9910180 2996.53025  0.15%     -    0s
+     0     0 2994.62010    0    7 2991.99102 2994.62010  0.09%     -    0s
+H    0     1                    2993.2844656 2994.62010  0.04%     -    0s
 
-Explored 0 nodes (29 simplex iterations) in 0.05 seconds
+Cutting planes:
+  Clique: 3
+  Zero half: 1
+
+Explored 1 nodes (132 simplex iterations) in 0.05 seconds
 Thread count was 8 (of 8 available processors)
 
-Solution count 2: 1909.02 1909.01 
+Solution count 4: 2993.28 2991.99 2903.34 2591.92 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 1.909015520147e+03, best bound 1.909015520147e+03, gap 0.0000%
-Obj: 1909.02
+Best objective 2.993284465572e+03, best bound 2.993284465572e+03, gap 0.0000%
+Obj: 2993.28

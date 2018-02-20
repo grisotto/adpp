@@ -6,24 +6,24 @@ Coefficient statistics:
   Objective range  [2e+00, 4e+02]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 3e+00]
-Found heuristic solution: objective 406.2140000
+Found heuristic solution: objective 438.2000000
 Presolve removed 55 rows and 0 columns
 Presolve time: 0.00s
 Presolved: 54 rows, 200 columns, 400 nonzeros
 Variable types: 0 continuous, 200 integer (200 binary)
 
-Root relaxation: objective 1.144531e+03, 1 iterations, 0.00 seconds
+Root relaxation: objective 1.218740e+03, 1 iterations, 0.00 seconds
 
     Nodes    |    Current Node    |     Objective Bounds      |     Work
  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-*    0     0               0    1144.5314000 1144.53140  0.00%     -    0s
+*    0     0               0    1218.7400000 1218.74000  0.00%     -    0s
 
 Explored 0 nodes (1 simplex iterations) in 0.00 seconds
 Thread count was 8 (of 8 available processors)
 
-Solution count 2: 1144.53 406.214 
+Solution count 2: 1218.74 438.2 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 1.144531400000e+03, best bound 1.144531400000e+03, gap 0.0000%
-Obj: 1144.53
+Best objective 1.218740000000e+03, best bound 1.218740000000e+03, gap 0.0000%
+Obj: 1218.74

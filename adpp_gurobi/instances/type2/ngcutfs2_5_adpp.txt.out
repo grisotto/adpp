@@ -3,27 +3,27 @@ Optimize a model with 2009 rows, 3958 columns and 11916 nonzeros
 Variable types: 0 continuous, 3958 integer (3958 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+00]
-  Objective range  [7e-01, 6e+02]
+  Objective range  [8e-01, 6e+02]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 1e+00]
-Found heuristic solution: objective 109.0164000
+Found heuristic solution: objective 122.3400000
 Presolve removed 1005 rows and 0 columns
-Presolve time: 0.03s
+Presolve time: 0.04s
 Presolved: 1004 rows, 3958 columns, 8036 nonzeros
 Variable types: 0 continuous, 3958 integer (3958 binary)
 
-Root relaxation: objective 1.820006e+03, 6 iterations, 0.00 seconds
+Root relaxation: objective 1.943010e+03, 5 iterations, 0.00 seconds
 
     Nodes    |    Current Node    |     Objective Bounds      |     Work
  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-*    0     0               0    1820.0061000 1820.00610  0.00%     -    0s
+*    0     0               0    1943.0100000 1943.01000  0.00%     -    0s
 
-Explored 0 nodes (6 simplex iterations) in 0.04 seconds
+Explored 0 nodes (5 simplex iterations) in 0.06 seconds
 Thread count was 8 (of 8 available processors)
 
-Solution count 2: 1820.01 109.016 
+Solution count 2: 1943.01 122.34 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 1.820006100000e+03, best bound 1.820006100000e+03, gap 0.0000%
-Obj: 1820.01
+Best objective 1.943010000000e+03, best bound 1.943010000000e+03, gap 0.0000%
+Obj: 1943.01
