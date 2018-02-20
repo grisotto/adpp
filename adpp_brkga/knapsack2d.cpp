@@ -81,7 +81,6 @@ void knapsack2d::readInstance(const char* filename, const char* flines, const ch
       getline(filelines, this->flines);
       getline(filetimes, this->ftimes);
       function_lines = knapsack2d::evaluate_function<double>(this->flines,this-> H);
-      cout << "m: " << function_lines.size() << endl;
       function_times = knapsack2d::evaluate_function<double>(this->ftimes, this->W);
 
     }else{

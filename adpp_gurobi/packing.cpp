@@ -113,9 +113,8 @@ bool knapsack2d(int W, int H, vector<int> w, vector<int> h,  vector<int> d, vect
             for (auto q : wSet){
               if(w[i]+q<=W){
                 //cout << "value: " << value[i] << " lines: "<< function_lines[p] << " p: " << p << " times: " << function_times[q]<< " q: "<< q << endl;
-                value[i] = value[i] * (function_lines[p] * function_times[q]);
                 //cout << "new value: " << value[i] << endl;
-                x[i].back().push_back(model.addVar(0.0, 1.0, value[i], GRB_BINARY));
+                x[i].back().push_back(model.addVar(0.0, 1.0, value[i] * (function_lines[p] * function_times[q]), GRB_BINARY));
               }
             }
           }

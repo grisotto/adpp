@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
 
         const unsigned X_INTVL = 444;	// exchange best individuals at every 100 generations
         const unsigned X_NUMBER = 4;	// exchange top 2 best
-        const unsigned MAX_GENS = 100;	// run for 
+        const unsigned MAX_GENS = 1;	// run for 
         const double fitRate = 0.99;
         const double sizeRate = 0.05;
         const bool DiversifyPopulation = false;
