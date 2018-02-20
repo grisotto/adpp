@@ -35,10 +35,10 @@ vector<double> knapsack2d::evaluate_function(const string function, const int po
     double result = expression.value();
     function_evaluate.push_back(result);
   }
-  cout << '\n';
-  for (vector<double>::iterator it = function_evaluate.begin(); it != function_evaluate.end(); ++it){
-    cout << ' ' << *it;
-  }
+  //cout << '\n';
+  //for (vector<double>::iterator it = function_evaluate.begin(); it != function_evaluate.end(); ++it){
+    //cout << ' ' << *it;
+  //}
   cout << '\n';
 
   if(validate)
@@ -73,7 +73,6 @@ void knapsack2d::readInstance(const char* filename, const char* flines, const ch
             in >> it.value; 
             items.push_back(it);
         }
-
     }else{
         cerr << "NO such file:" << filename << endl; 
         throw(1);
@@ -81,8 +80,9 @@ void knapsack2d::readInstance(const char* filename, const char* flines, const ch
     if(filelines && filetimes){
       getline(filelines, this->flines);
       getline(filetimes, this->ftimes);
-      this->function_lines = knapsack2d::evaluate_function<double>(flines, H);
-      this->function_times = knapsack2d::evaluate_function<double>(ftimes, W);
+      function_lines = knapsack2d::evaluate_function<double>(this->flines,this-> H);
+      cout << "m: " << function_lines.size() << endl;
+      function_times = knapsack2d::evaluate_function<double>(this->ftimes, this->W);
 
     }else{
         cerr << "No functions files:" << endl; 

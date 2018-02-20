@@ -4,6 +4,8 @@
 brkga2dkDecoder::brkga2dkDecoder(knapsack2d& instance) {
     m_instance.W = instance.W;
     m_instance.H = instance.H;
+    m_instance.function_lines = instance.function_lines;
+    m_instance.function_times = instance.function_times;
     for(auto &item : instance.items) {
         auto item_copy = item;
         item_copy.b = 1;
@@ -29,6 +31,10 @@ void print_seq(vector<pair<int,int> > & seq) {
 
 double brkga2dkDecoder::decode(const std::vector< double >& chromosome) const {
     vector<int> A(m_instance.N);
+    
+    //cout << "m: " << m_instance.function_lines.size()<< endl;
+    vector<double> function_lines(m_instance.function_lines);
+    vector<double> function_times(m_instance.function_times);
     for(int i=0; i<m_instance.N; ++i) {
         A[i] = i;
     }
@@ -37,7 +43,7 @@ double brkga2dkDecoder::decode(const std::vector< double >& chromosome) const {
     double value = 0.0;
 
     typedef pair<int,int> pii;
-    // vector of points of corners
+    //vector of points of corners
     vector<pii> corners;
     //initials coorners
     corners.push_back(pii(0,m_instance.H));
@@ -50,7 +56,6 @@ double brkga2dkDecoder::decode(const std::vector< double >& chromosome) const {
         auto &item = m_instance.items[idx];
         pii found;
         bool found_corner = false;
-
         if (typ) {
             //BL
             for(int i=0; i<(int)corners.size(); ++i) {
@@ -62,7 +67,7 @@ double brkga2dkDecoder::decode(const std::vector< double >& chromosome) const {
                     break;
                 }
             }
-        } else {
+        }else {
             //LB
             for(int i=(int)corners.size() - 1; i>=0; --i) {
                 auto &corner = corners[i];
@@ -76,7 +81,10 @@ double brkga2dkDecoder::decode(const std::vector< double >& chromosome) const {
         }
         if (!found_corner) continue; // not using this item
 
-        value += item.value;
+        //cout << "Picked (" << found.first << "," << found.second << ")  W=" << item.width << " H=" << item.height << "\n";
+        //cout << "Value " << value << "\n";
+        value += (item.value * m_instance.function_lines[found.second] * m_instance.function_times[found.first]); 
+        //cout << "NewValue " << value << "\n";
         int first = -1;
         int lst = -1;
         int toplefty = found.second + item.height;

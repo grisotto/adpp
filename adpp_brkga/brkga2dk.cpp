@@ -60,12 +60,12 @@ int main(int argc, char* argv[]) {
         const double pe = 0.08;		// fraction of population to be the elite-set
         const double pm = 0.18;		// fraction of population to be replaced by mutants
         const double rhoe = 0.77;	// probability that offspring inherit an allele from elite parent
-        const unsigned K = 5;		// number of independent populations
-        const unsigned MAXT = 4;	// number of threads for parallel decoding
+        const unsigned K = 1;		// number of independent populations
+        const unsigned MAXT = 1;	// number of threads for parallel decoding
 
         const unsigned X_INTVL = 444;	// exchange best individuals at every 100 generations
         const unsigned X_NUMBER = 4;	// exchange top 2 best
-        const unsigned MAX_GENS = 2;	// run for 
+        const unsigned MAX_GENS = 100;	// run for 
         const double fitRate = 0.99;
         const double sizeRate = 0.05;
         const bool DiversifyPopulation = false;
