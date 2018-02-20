@@ -10,13 +10,13 @@ vector<double> knapsack2d::evaluate_function(const string function, const int po
   vector<double> function_evaluate; 
 
   string expression_string = function;
-  cout << "function: "<< function<<"\n"<< endl;
+  //cout << "function: "<< function<<"\n"<< endl;
 
-  cout << "Points: "<< '\n';
-  for (int it=0; it < points; it++){
-    cout << " " << it ; 
-  }
-  cout << '\n';
+  //cout << "Points: "<< '\n';
+  //for (int it=0; it < points; it++){
+    //cout << " " << it ; 
+  //}
+  //cout << '\n';
   T x;
   symbol_table_t symbol_table;
   symbol_table.add_variable("x",x);
@@ -27,11 +27,11 @@ vector<double> knapsack2d::evaluate_function(const string function, const int po
 
   parser_t parser;
   parser.compile(expression_string,expression);
-  cout << "expression.value: "<< '\n';
+  //cout << "expression.value: "<< '\n';
   function_evaluate.push_back(1.0);
   for (int it=1; it < points; it++){
     x = it;
-    cout << " " << expression.value(); 
+    //cout << " " << expression.value(); 
     double result = expression.value();
     function_evaluate.push_back(result);
   }
@@ -39,7 +39,7 @@ vector<double> knapsack2d::evaluate_function(const string function, const int po
   //for (vector<double>::iterator it = function_evaluate.begin(); it != function_evaluate.end(); ++it){
     //cout << ' ' << *it;
   //}
-  cout << '\n';
+  //cout << '\n';
 
   if(validate)
     for (x = T(1); x <= T(+1); x += T(0.1))

@@ -81,10 +81,10 @@ double brkga2dkDecoder::decode(const std::vector< double >& chromosome) const {
         }
         if (!found_corner) continue; // not using this item
 
-        cout << "Picked (" << found.first << "," << found.second << ")  W=" << item.width << " H=" << item.height << " Value:  "<< item.value <<  "\n";
-        cout << "Value " << value << "\n";
+        //cout << "Picked (" << found.first << "," << found.second << ")  W=" << item.width << " H=" << item.height << " Value:  "<< item.value <<  "\n";
+        //cout << "Value " << value << "\n";
         value = value + (item.value * m_instance.function_lines[found.second] * m_instance.function_times[found.first]); 
-        cout << "NewValue " << value << "\n";
+        //cout << "NewValue " << value << "\n";
         int first = -1;
         int lst = -1;
         int toplefty = found.second + item.height;
