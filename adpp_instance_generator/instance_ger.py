@@ -61,8 +61,8 @@ NADS = arguments['NADS']
 random.seed(datetime.now())
 
 file = open('{}_{}_{}_{}.adpp'.format(DIST, H, T, NADS),"w")
-file.write('{}\t{}'.format(H,T))
-file.write('\n{}\n'.format(NADS))
+file.write('{}\n'.format(NADS))
+file.write('{}\t{}\n'.format(H,T))
 ads = []
 for i in range(1, NADS):
     d = {}
