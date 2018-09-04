@@ -1,0 +1,15 @@
+#!/bin/bash
+
+altura=10
+quantidadeitems=100
+
+while [  $altura -lt 45 ]; do
+
+    while [  $quantidadeitems -lt 1000 ]; do
+        python3 instance_ger.py norm $altura 10 $quantidadeitems
+        let quantidadeitems=quantidadeitems+100 
+    done
+
+    let quantidadeitems=100 
+    let altura=altura+5 
+done
