@@ -9,8 +9,8 @@ Examples:
 
 Arguments:
   DIST  distributions: norm, zipf
-  H     height of the banner/knapsack
-  T     exposition time of the banner/knapsack
+  H     height of the banner
+  T     exposition time of the banner
   NADS  numbers of ads
 
 Options:
@@ -31,15 +31,15 @@ except ImportError as e:
             'is installed: \n pip install schema\n')
 
 if __name__ == '__main__':
-    arguments = docopt(__doc__, version='1.0.0 - 05/02/18')
+    arguments = docopt(__doc__, version='1.2.0 - 30/08/18')
      
 #Validation the distribuition
     schema = Schema({
             'DIST': And(str, Use(str.lower),
                         lambda s: s in ('norm','zipf'),
                         error='Please, use distribuition norm or zipf'),
-            'H':    And(Use(int), lambda n: 0 < n < 15), 
-            'T':    And(Use(int), lambda n: 0 < n < 15), 
+            'H':    And(Use(int), lambda n: 0 < n < 1000), 
+            'T':    And(Use(int), lambda n: 0 < n < 100000), 
             'NADS':    And(Use(int), lambda n: 0 < n < 10e10), 
             str: object })
 try:
@@ -49,9 +49,14 @@ except SchemaError as e:
 # Here we define the numbers of ads and the information
 # each ad as height, exposition time(t), how much want to pay to shown
 
+# dimensao do tempo infinita
+
+# definir um k para altura e os itens tem 10 a 20 % de k
+
 DIST = arguments['DIST']
-H = arguments['H'] #banner/knapsack height/lines
-T = arguments['T'] #banner/knapsack exposition time
+H = arguments['H'] #banner height/lines
+# T = arguments['T'] #banner exposition time
+T = 100000
 NADS = arguments['NADS']
 random.seed(datetime.now())
 
@@ -61,8 +66,10 @@ file.write('\n{}\n'.format(NADS))
 ads = []
 for i in range(1, NADS):
     d = {}
-    d['h'] = random.randrange(1, H-1,1)
-    d['t'] = random.randrange(1, T-1,1)
+    hmin = int(H*0.1) 
+    hmax = int(H*0.2)
+    d['h'] = random.randrange(hmin, hmax, 1)
+    d['t'] = random.randrange(1, 10, 1)
     area = d['h'] * d['t']
     d['alpha'] = round(random.uniform(0.5*area,1.5*area ),2)
     ads.append(d)
