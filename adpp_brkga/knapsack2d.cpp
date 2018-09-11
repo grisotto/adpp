@@ -68,8 +68,10 @@ void knapsack2d::readInstance(const char* filename, const char* flines, const ch
             Item it;        
             in >> it.width; 
             in >> it.height; 
-            in >> it.demand; 
-            in >> it.b; 
+            it.demand = 0;
+            it.b = 1;
+            //in >> it.demand; 
+            //in >> it.b; 
             in >> it.value; 
             items.push_back(it);
         }

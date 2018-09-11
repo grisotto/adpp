@@ -77,17 +77,17 @@ int main(int argc, char* argv[]) {
         unsigned relevantGeneration = 1;
 
         knapsack2d instance(argv[1], argv[2], argv[3]);
-        brkga2dkDecoder decoder(instance);				// initialize the decoder
+        //brkga2dkDecoder decoder(instance);				// initialize the decoder
         //brkga2dkDecoder_2 decoder_2(instance);
         //brkga2dkDecoder_3 decoder_3(instance);
-        //brkga2dkDecoder_4 decoder_4(instance);
+        brkga2dkDecoder_4 decoder_4(instance);
 
-        const unsigned n = decoder.getChromosomeSize();
+        //const unsigned n = decoder.getChromosomeSize();
         //const unsigned n = decoder_2.getChromosomeSize();
         //const unsigned n = decoder_3.getChromosomeSize();
-        //const unsigned n = decoder_4.getChromosomeSize();
+        const unsigned n = decoder_4.getChromosomeSize();
         
-        int logL =  7 * (int)(log(decoder.getChromosomeSize()) / log(2));	
+        int logL =  7 * (int)(log(decoder_4.getChromosomeSize()) / log(2));	
         //int logL =  readL * (int)(log(decoder.getChromosomeSize()) / log(2));	
         
         const unsigned p = ((logL % 2 == 0)?logL: logL+1);	// size of population
@@ -98,10 +98,10 @@ int main(int argc, char* argv[]) {
 
         // initialize the BRKGA-based heuristic
         //first decoder
-        BRKGA< brkga2dkDecoder, MTRand > algorithm(n, p, pe, pm, rhoe, decoder, rng, K, MAXT);
+        //BRKGA< brkga2dkDecoder, MTRand > algorithm(n, p, pe, pm, rhoe, decoder, rng, K, MAXT);
         //BRKGA< brkga2dkDecoder_2, MTRand > algorithm(n, p, pe, pm, rhoe, decoder_2, rng, K, MAXT);
         //BRKGA< brkga2dkDecoder_3, MTRand > algorithm(n, p, pe, pm, rhoe, decoder_3, rng, K, MAXT);
-        //BRKGA< brkga2dkDecoder_4, MTRand > algorithm(n, p, pe, pm, rhoe, decoder_4, rng, K, MAXT);
+        BRKGA< brkga2dkDecoder_4, MTRand > algorithm(n, p, pe, pm, rhoe, decoder_4, rng, K, MAXT);
 
         unsigned generation = 0;		// current generation
         std::cout << "Running for " << MAX_GENS << " generations..." << std::endl;
