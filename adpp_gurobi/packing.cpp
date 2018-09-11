@@ -137,24 +137,13 @@ bool knapsack2d(int W, int H, vector<int> w, vector<int> h,  vector<int> d, vect
         //GRBLinExpr expr = 1.0;
         //model.addConstr(expr, GRB_EQUAL, x[i]);
         //}
-        //
-        for (int i = 0; i < m; i++) {
-
+        
+        //++ Item copies Constraints
+        for (int i = 0; i < m; i++){
             GRBLinExpr expr = 0.0;
-            for (int p=0; p< W; p++){
-                for (int q =0; p< H; q++){
-                    expr += x[i][p][q];
-                    model.addConstr(expr, GRB_EQUAL, 1.0);
-                }
-            }
+            for (auto p: x[i]) for (auto q: p) expr += q;
+            model.addConstr(expr == b[i]);
         }
-
-        ////++ Item copies Constraints
-        //for (int i = 0; i < m; i++){
-        //GRBLinExpr expr = 0.0;
-        //for (auto p: x[i]) for (auto q: p) expr += q;
-        //model.addConstr(expr <= b[i]);
-        //}
 
         ////++ Item copies Constraints
         //for (int i = 0; i < m; i++){

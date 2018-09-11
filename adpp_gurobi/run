@@ -1,8 +1,9 @@
 #!/bin/bash
-make
-	for f in instances/*.adpp;
+#make
+for f in instances/*.adpp;
 do
-echo "Instancia $f starting"
-./packing $f flines ftimes | tee $f.out
+    echo "Instancia $f starting"
+    ./packing $f flines ftimes | tee $f.out
+    mv $f  $f.done
 
 done
