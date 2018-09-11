@@ -71,7 +71,7 @@ for i in range(1, NADS):
     d['h'] = random.randrange(hmin, hmax, 1)
     d['t'] = random.randrange(1, 10, 1)
     area = d['h'] * d['t']
-    d['alpha'] = round(random.uniform(0.5*area,1.5*area ),2)
+    d['alpha'] = int (round(random.uniform(1*area,3*area ),2))
     ads.append(d)
     file.write('{}\t{}\t{}\n'.format(d['h'],d['t'],d['alpha']))
 
