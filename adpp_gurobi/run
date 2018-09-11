@@ -1,5 +1,5 @@
 #!/bin/bash
-#make
+make
 for f in instances/*.adpp;
 do
     echo "Instancia $f starting"
